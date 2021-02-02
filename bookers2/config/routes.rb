@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   
   resources :books do
     resource :favorites, only: [:create, :destroy]
-    # resource :favorites, only: [:create, :destroy]追記
-    # showページが不要でidの受け渡しが必要ないので、resource
+    resources :book_comments, only: [:create, :destroy]
   end 
   
   root 'homes#top'
