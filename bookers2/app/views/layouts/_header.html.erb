@@ -22,4 +22,13 @@
       </div>
     </div>
   </nav>
+  <% if user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto my-2">
+        <%= render 'layouts/search' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </header>

@@ -1,3 +1,4 @@
+<% if @users.exists? %>
 <div class="container">
   <div class="row">
     <h2><%= @title %></h2>
@@ -23,3 +24,10 @@
       </table>
   </div>
 </div>
+<% else %>
+  <div class="container">
+      <h2><%= @title %></h2>
+        <p>ユーザーはいません</p>
+    </div>
+  </div>
+<% end %>

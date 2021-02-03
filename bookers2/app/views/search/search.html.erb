@@ -1,0 +1,7 @@
+<div class="container">
+  <% if @model == "user" %>
+    <%= render "user_search", content: @content, datas: @datas %>
+  <% else %>
+    <%= render "book_search", content: @content, datas: @datas %>
+  <% end %>
+</div>
