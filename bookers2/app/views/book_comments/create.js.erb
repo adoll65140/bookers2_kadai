@@ -1,0 +1,4 @@
+$('.comments-count').html("<%= j(render 'book_comments/comments_count', book: @book) %>");
+$('.comment-box').html("<%= j(render 'book_comments/book_comments', book: @book) %>");
+$('.comment-error').empty();
+$('#book_comment_comment').val('');
