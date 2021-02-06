@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>">
+        <%= @user.name %>さんとのチャット
+      </h2>
+      <table class="table table-borderless message">
+        <thead>
+          <tr>
+            <td>投稿者名</td>
+            <td>投稿内容</td>
+          </tr>
+        </thead>
+        <% @chats.each do |chat| %>
+          <tbody>
+            <tr>
+              <td>
+                <p><%= chat.user.name %></p>
+              </td>
+              <td>
+                <p><%= chat.message %></p>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+      <div id="chat-error"></div>
+        <%= form_with model: @chat do |f| %>
+          <%= f.text_field :message, placeholder: "message", autocomplete: "off", class: 'form-control' %>
+          <%= f.hidden_field :room_id %>
+        <% end %>
+      </div>
+  </div>
+</div>
